@@ -82,10 +82,29 @@
 
     <div class="bg-light vh-100">
         <div class="vh-100 d-flex align-items-center justify-content-center">
-            <div class="w-100 d-flex align-items-center bg-white container border h-100">
-                <div id="example" class="w-100">
+            <div class="w-100 d-flex flex-wrap align-items-center bg-white container border h-100">
+                <div class="col-12">
+                    <div class="mb-5 d-flex justify-content-center">
+                        <div class="col-1">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-default">Min</span>
+                                </div>
+                                <input id="example_min" type="text" class="form-control" value="1">
+                            </div>
+                        </div>
+                        <div class="mx-3"></div>
+                        <div class="col-1">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-default">Max</span>
+                                </div>
+                                <input id="example_max" type="text" class="form-control" value="99">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="example_container"></div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -97,7 +116,7 @@
                 || !container instanceof HTMLDivElement
                 || !parseInt(initial_min_value)
                 || !parseInt(initial_max_value)
-                || initial_min_value >= initial_max_value) return console.warn('Erro price-range-filter: Valores inválidos.');
+                || initial_min_value >= initial_max_value) return alert('Error price-range-filter: Invalid parameters.');
 
             let min_rect, min_range, min_range_offset, current_min_value,
                 max_rect, max_range, max_range_offset, current_max_value;
@@ -172,7 +191,10 @@
             calculateRanges();
         };
 
-        generatePriceRange(example, 1, 50);
+        generatePriceRange(example_container, parseInt(example_min.value), parseInt(example_max.value));
+
+        example_min.addEventListener('change', () => generatePriceRange(example_container, parseInt(example_min.value), parseInt(example_max.value)));
+        example_max.addEventListener('change', () => generatePriceRange(example_container, parseInt(example_min.value), parseInt(example_max.value)));
     </script>
 
 </body>
