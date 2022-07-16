@@ -1,7 +1,7 @@
 # Native-JS-price-filter-range
 Simple auto generate element for price-range filters with two slides.
 
-call **generatePriceRange** passing:
+call **generatePriceRange(container, min, max)** passing:
  - html element as target, the price range will be generated inside.
  - integer value for minimum value.
  - integer value for maximum value.
