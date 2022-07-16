@@ -6,4 +6,6 @@ call **generatePriceRange** passing:
  - integer value for minimum value.
  - integer value for maximum value.
  
- Enjoy.
+ Enjoy. 
+ 
+ Example: https://silrodrigo.github.io/Native-JS-price-filter-range/
