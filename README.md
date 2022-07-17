@@ -8,6 +8,7 @@ call **generatePriceRange(container, min, max)** passing:
  - html element as target, the price range will be generated inside.
  - integer value for minimum value.
  - integer value for maximum value.
+ - callback who receives an object with current values as parameter, is executed everytime an user moves a slide and triggers the mouseup event.
  
  Enjoy. 
  
